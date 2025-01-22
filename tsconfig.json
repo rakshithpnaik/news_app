@@ -1,0 +1,26 @@
+{
+    "compilerOptions": {
+      "moduleResolution": "node", // Resolves modules like Node.js
+      "esModuleInterop": true,    // Ensures compatibility between CommonJS and ESModules
+      "resolveJsonModule": true,  // Allows importing JSON modules
+      "jsx": "react",             // Support for React JSX (for React 16+)
+      "strict": true,             // Enable strict type-checking options
+      "module": "esnext",         // Use ES modules
+      "target": "esnext",         // Target the latest JavaScript version
+      "baseUrl": "./",            // Base directory for module resolution
+      "paths": {
+        "*": ["node_modules/*", "src/*"] // Allow resolving files in `src/` and `node_modules/`
+      },
+      "allowJs": true,            // Allow JavaScript files in the project
+      "checkJs": true             // Type-check JavaScript files
+    },
+    "include": [
+      "src/**/*",  // Include all files in the `src/` directory
+      "src/types/**/*.d.ts"
+
+    ],
+    "exclude": [
+      "node_modules"  // Exclude node_modules from the compilation
+    ]
+  }
+  
