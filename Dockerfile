@@ -1,14 +1,38 @@
+# # Use an official Node.js runtime as a parent image
+# FROM node:18-alpine
+
+# # Set the working directory in the container
+# WORKDIR /app
+
+# # Copy the package.json and package-lock.json files
+# COPY package*.json ./
+
+# # Install the dependencies
+# RUN npm install -force
+
+# # Copy the rest of the application files
+# COPY . .
+
+# # Build the React app
+# RUN npm run build
+
+# # Expose the port the app runs on
+# EXPOSE 3000
+
+# # Run the app
+# CMD ["npx", "serve", "-s", "build"]
+
 # Use an official Node.js runtime as a parent image
 FROM node:18-alpine
 
 # Set the working directory in the container
 WORKDIR /app
 
-# Copy the package.json and package-lock.json files
+# Copy dependency files first to leverage Docker cache
 COPY package*.json ./
 
-# Install the dependencies
-RUN npm install
+# Install dependencies
+RUN npm ci --force
 
 # Copy the rest of the application files
 COPY . .
@@ -16,8 +40,11 @@ COPY . .
 # Build the React app
 RUN npm run build
 
+# Install the 'serve' package globally for production
+RUN npm install -g serve --force
+
 # Expose the port the app runs on
 EXPOSE 3000
 
-# Run the app
-CMD ["npx", "serve", "-s", "build"]
+# Run the app using 'serve'
+CMD ["serve", "-s", "build"]

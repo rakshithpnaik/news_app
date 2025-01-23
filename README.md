@@ -171,10 +171,10 @@ services:
 ## Build and Run the Docker Container
 1. Build the Docker Image: Open a terminal in the root directory of your project and run:
 
-	`docker build -t news-aggregator .`
+	`docker build -t news_app .`
 
 2. Run the Docker Container: To start a container from your image, run:
-	`docker run -p 80:80 news-aggregator`
+	`docker run -p 3000:3000 news_app`
 
 	If using Docker Compose, you can build and run the container with:
 	`docker-compose up --build`
