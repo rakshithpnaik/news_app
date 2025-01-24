@@ -1,8 +1,6 @@
-# News Aggregator Application - [![Netlify Status](https://api.netlify.com/api/v1/badges/992d1de3-06ae-4bdb-a95b-e7a5a8cc7d10/deploy-status)](https://app.netlify.com/sites/latestnewsaggregator/deploys)
-
 ### Overview
 
-This project is a news aggregator website built with React.js. The application pulls articles from various sources and displays them in a clean, easy-to-read format. Users can search for articles by keyword, filter results by date, category, and source, and create a personalized news feed. The application is mobile-responsive and optimized for viewing on various devices.
+This project is a news website built with React.js. The application pulls articles from various sources and displays them in a clean, easy-to-read format. Users can search for articles by keyword, filter results by date, category, and source, and create a personalized news feed. The application is mobile-responsive and optimized for viewing on various devices.
 
 ### Features
 
@@ -29,7 +27,7 @@ The application uses the following data sources:
 
 ### Project Structure
 ```
-news-aggregator/
+news_app/
 │
 ├── public/
 │   ├── index.html
@@ -38,36 +36,36 @@ news-aggregator/
 ├── src/
 │   ├── components/
 │   │   ├── Error
-│   │   │   ├── Error.js
+│   │   │   ├── Error.tsx
 │   │   ├── Loading
-│   │   │   ├── index.js
-│   │   │   ├── Loading.js
+│   │   │   ├── index.ts
+│   │   │   ├── Loading.tsx
 │   │   ├── NavBar
-│   │   │   ├── Loading.css
-│   │   │   ├── Loading.js
+│   │   │   ├── NavBar.css
+│   │   │   ├── NavBar.tsx
 │   │   ├── News
-│   │   │   ├── index.js
+│   │   │   ├── index.ts
 │   │   │   ├── News.css
-│   │   │   ├── News.js
+│   │   │   ├── News.tsx
 │   │   ├── NewsCard
 │   │   │   ├── Details
 │   │   │		│   ├── Details.css
-│   │   │		│   ├── Details.js
+│   │   │		│   ├── Details.tsx
 │   │   │   ├── NewsCard.css
-│   │   │   ├── NewsCard.js
+│   │   │   ├── NewsCard.tsx
 │   │   ├── NoDataFound
 │   │   │   ├── NoDataFound.css
-│   │   │   ├── NoDataFound.js
+│   │   │   ├── NoDataFound.tsx
 │   │   ├── NoRouteFound
-│   │   │   ├── NoRouteFound.js
+│   │   │   ├── NoRouteFound.tsx
 │   │   ├── ScrollToTop
-│   │   │   ├── ScrollToTop.js
-│   │   ├── index.js
+│   │   │   ├── ScrollToTop.tsx
+│   │   ├── index.ts
 │   │   └── ...
 │   │
 │   ├── config/
-│   │   ├── api.js
-│   │   ├── config.js
+│   │   ├── api.ts
+│   │   ├── config.tsx
 │   │   └── ...
 │   │
 │   ├── images/
@@ -76,24 +74,24 @@ news-aggregator/
 │   │
 │   ├── pages/
 │   │   ├── HomePage
-│   │   │   ├── HomePage.js
+│   │   │   ├── HomePage.tsx
 │   │   ├── PersonalizedPage
-│   │   │   ├── PersonalizedPage.js
+│   │   │   ├── PersonalizedPage.tsx
 │   │   └── ...
 │   │
 │   ├── router/
-│   │   ├── appRouter.js
+│   │   ├── appRouter.tsx
 │   │   └── ...
 │   │
 │   ├── store/
 │   │   ├── slices/
-│   │   │   ├── articlesSlice.js
-│   │   └── store.js
+│   │   │   ├── articlesSlice.ts
+│   │   └── store.ts
 │   │
 │   ├── App.css
-│   ├── App.js
+│   ├── App.tsx
 │   ├── index.css
-│   ├── index.js
+│   ├── index.tsx
 │   └── ...
 │
 ├── .dockerignore
@@ -102,6 +100,7 @@ news-aggregator/
 ├── docker-compose.yml
 ├── Dockerfile
 ├── package.json
+├── tsconfig.json
 └── ...
 ```
 
@@ -182,8 +181,8 @@ services:
 ### Project Setup and Dockerization
 1. Clone the Repository:
 
-	git clone https://github.com/yourusername/news-aggregator.git
-	cd news-aggregator
+	git clone https://github.com/rakshithpnaik/news_app.git
+	cd news_app
 
 2. Install Docker:
 
@@ -191,11 +190,11 @@ services:
 
 3. Build the Docker Image:
 
-	`docker build -t news-aggregator .`
+	`docker build -t news_app .`
 
 4. Run the Docker Container:
 	
-	`docker run -p 80:80 news-aggregator`
+	`docker run -p 3000:3000 news_app`
 
 	Alternatively, if you are using Docker Compose, run:
 	
@@ -203,7 +202,7 @@ services:
 
 5. Access the Application:
 
-	Open your web browser and go to http://localhost to see the application running.
+	Open your web browser and go to http://localhost:3000 to see the application running.
 
 6. Stopping the Container:
 

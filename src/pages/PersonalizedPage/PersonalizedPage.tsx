@@ -105,13 +105,13 @@ function PersonalizedPage() {
           <Offcanvas.Body>
             <h4>Filter By Sources</h4>
             <Form className="sources checkbox-container">
-              {uniqueSources.map((source) => (
+              {uniqueSources.map((source: any) => (
                 <div key={`default-${source}`} className="mb-3">
-                  <Form.Check // prettier-ignore
+                  <Form.Check
                     type="checkbox"
                     id={`default-${source}`}
-                    // label={source}
-                    // value={source}
+                    value={source ? source.toString() : ""}
+                    label={source}
                     checked={selectedSources.includes(source)}
                     onChange={() => handleSourcesCheckboxChange(source)}
                   />
@@ -121,13 +121,13 @@ function PersonalizedPage() {
             <hr />
             <h4>Filter By Authors</h4>
             <Form className="authors checkbox-container">
-              {uniqueAuthors.map((author) => (
+              {uniqueAuthors.map((author:  any) => (
                 <div key={`default-${author}`} className="mb-3">
                   <Form.Check // prettier-ignore
                     type="checkbox"
                     id={`default-${author}`}
-                    // label={author}
-                    // value={author}
+                    label={author}
+                    value={author ? author.toString() : ""}
                     checked={selectedAuthors.includes(author)}
                     onChange={() => handleAuthorCheckboxChange(author)}
                   />
@@ -137,13 +137,13 @@ function PersonalizedPage() {
             <hr />
             <h4>Filter By Categories</h4>
             <Form className="categories checkbox-container">
-              {uniqueCategories.map((category) => (
+              {uniqueCategories.map((category : any) => (
                 <div key={`default-${category}`} className="mb-3">
                   <Form.Check
                     type="checkbox"
                     id={`default-${category}`}
-                    // label={category}
-                    // value={category}
+                    label={category}
+                    value={category}
                     checked={selectedCategories.includes(category)}
                     onChange={() => handleCategoriesCheckboxChange(category)}
                   />
