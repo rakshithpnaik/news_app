@@ -44,32 +44,42 @@ function NavBar() {
 
   const isSearchButtonDisabled = searchInputValue.trim() === "";
   console.log(selected);
-  const handleSubmit = (e : any) => {
+  const handleSubmit = (e: any) => {
     e.preventDefault();
     dispatch(setQuery(searchInputValue));
-    dispatch(fetchArticles({ query: searchInputValue, source: selected.key, date: startDate }));
+    dispatch(
+      fetchArticles({
+        query: searchInputValue,
+        source: selected.key,
+        date: startDate,
+      })
+    );
     setSearchInputValue("");
   };
 
   // Handle the selection of a new source
   const handleSelectSource = (eventKey: any) => {
-    const selectedSource : any = sources.find((source) => source.key === eventKey);
+    const selectedSource: any = sources.find(
+      (source) => source.key === eventKey
+    );
     setSelected(selectedSource);
     dispatch(setSource(selectedSource));
   };
 
   const handleSelectCategory = (eventKey: any) => {
-    const selectedCategory : any = categories.find(
+    const selectedCategory: any = categories.find(
       (category) => category === eventKey
     );
     setSelectedCategory(selectedCategory);
     dispatch(setCategory(selectedCategory));
   };
 
-  const handleDateChange = (date : any) => {
-    const formattedDate = moment(date).format("YYYY-MM-DD");
-    setStartDate(formattedDate);
-    dispatch(setDate(formattedDate));
+  const handleDateChange = (date: any) => {
+    if (date) {
+      const formattedDate = moment(date).format("YYYY-MM-DD");
+      setStartDate(formattedDate);
+      dispatch(setDate(formattedDate));
+    }
   };
 
   useEffect(() => {
@@ -82,10 +92,9 @@ function NavBar() {
         source: selected.key,
         category: selectedCategory,
         date: startDate,
-      }
-    )
+      })
     );
-    dispatch(setQuery(''));
+    dispatch(setQuery(""));
     // eslint-disable-next-line
   }, [dispatch, selected, selectedCategory]);
 
@@ -99,9 +108,7 @@ function NavBar() {
     >
       <Navbar.Brand className="nav-brand" href="/">
         <img
-          src={
-            "https://cdn-icons-png.flaticon.com/512/11922/11922419.png"
-          }
+          src={"https://cdn-icons-png.flaticon.com/512/11922/11922419.png"}
           alt="Logo"
           className="logo"
         />
@@ -166,7 +173,10 @@ function NavBar() {
             </NavDropdown>
           </Nav>
           <div className="date-picker">
-            <DatePicker selected={startDate as any} onChange={handleDateChange} />
+            <DatePicker
+              selected={startDate as any}
+              onChange={handleDateChange}
+            />
           </div>
           <Form className="search-form" onSubmit={handleSubmit}>
             <FormControl
