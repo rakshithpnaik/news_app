@@ -150,8 +150,8 @@ The Dockerfile defines the steps to build the Docker image for the application.
 ### Copy the build files from the build stage to the Nginx HTML directory
 `COPY --from=build /app/build /usr/share/nginx/html`
 
-### Expose port 80 to access the app
-`EXPOSE 80`
+### Expose port 3000 to access the app
+`EXPOSE 3000`
 
 ### Start Nginx server
 `CMD ["nginx", "-g", "daemon off;"]`
@@ -165,7 +165,7 @@ services:
   web:
     build: .
     ports:
-      - "80:80"
+      - "3000:3000"
 ```
 ## Build and Run the Docker Container
 1. Build the Docker Image: Open a terminal in the root directory of your project and run:
