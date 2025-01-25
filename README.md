@@ -136,13 +136,16 @@ The Dockerfile defines the steps to build the Docker image for the application.
 `COPY package*.json ./`
 
 ### Install the dependencies
-`RUN npm install`
+`RUN npm install --force`
 
 ### Copy the rest of the application files
 `COPY . .`
 
 ### Build the React app
 `RUN npm run build`
+
+### Run the React app
+`RUN npm start`
 
 ### Use a smaller image for serving the app
 `FROM nginx:alpine`
