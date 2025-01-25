@@ -2,7 +2,6 @@ import React from "react";
 import { Button, Card } from "react-bootstrap";
 import "./NewsCard.css"; 
 import { Details } from "../index";
-// import   ArrowIcon  from '../../images/ArrowIcon.svg';
 
 function NewsCard({ imageUrl, alt, description, title, channel, published, urlNews, author }: any) {
   
@@ -19,7 +18,6 @@ function NewsCard({ imageUrl, alt, description, title, channel, published, urlNe
           target="_blank"
         >
           Read more 
-          {/* <ArrowIcon className="arrow-icon" /> */}
         </Button>
       </Card.Body>
     </Card>

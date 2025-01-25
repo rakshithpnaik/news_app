@@ -61,7 +61,7 @@ function News({ personalized, handleShowSidebar }: NewsProps) {
                         published={element.publishedAt}
                         channel={element.source}
                         alt="News image"
-                        // publishedAt={element.publishedAt}
+                        publishedAt={element.publishedAt}
                         imageUrl={element.imgSrc}
                         urlNews={element.url}
                         author={element.author}
