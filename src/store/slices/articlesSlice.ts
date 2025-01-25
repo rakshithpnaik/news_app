@@ -8,7 +8,7 @@ export const fetchArticles : any = createAsyncThunk(
 
       let articles : any = [];
 
-      // Fetch from NYT API
+      // Fetch from gnews API
       if (source.key === 'gnews-api' || source.key === 'all') {
         const nyTimesArticles = await fetchGnewsArticles(query, params);
         articles = [...articles, ...nyTimesArticles];
