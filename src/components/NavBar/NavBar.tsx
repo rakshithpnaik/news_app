@@ -31,7 +31,6 @@ function NavBar() {
   // Extract the pathname from the location object
   const currentPath = location.pathname;
 
-  console.log(currentPath);
   const isPagePersonalized = /\/personalized/.test(currentPath);
 
   const [searchInputValue, setSearchInputValue] = useState("");
@@ -101,7 +100,7 @@ function NavBar() {
       <Navbar.Brand className="nav-brand" href="/">
         <img
           src={
-            "https://seeklogo.com/images/S/svg-logo-A7D0801A11-seeklogo.com.png"
+            "https://cdn-icons-png.flaticon.com/512/11922/11922419.png"
           }
           alt="Logo"
           className="logo"
