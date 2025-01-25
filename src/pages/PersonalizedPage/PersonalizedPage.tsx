@@ -98,7 +98,7 @@ function PersonalizedPage() {
         <Offcanvas show={show} onHide={handleCloseSidebar} variant="dark">
           <Offcanvas.Header closeButton>
             <Offcanvas.Title>
-              <h1>Personalized Filter</h1>
+              <h3 className="personalized-header">Personalized Filter</h3>
             </Offcanvas.Title>
           </Offcanvas.Header>
           <hr />

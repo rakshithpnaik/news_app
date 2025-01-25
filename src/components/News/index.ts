@@ -1,10 +1,11 @@
 import styled from "styled-components";
 
-export const Header = styled.h1`
+export const Header = styled.h3`
   text-align: center;
   margin-top: 120px;
   color: black;
   margin-bottom: 20px;
+  font-weight: bold;
   @media screen and (max-width: 425px) {
     font-size: 30px;
   }

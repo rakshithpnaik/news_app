@@ -44,11 +44,16 @@
     margin-left: 13px !important;
     /* margin-right: -9px !important; */
     font-size: 18px !important;
-    background-color: #31383e !important;
-    color: #fff !important;
+    background-color: #ffffff !important;
+    color: #000000 !important;
     border: 0 !important;
     outline: 0 !important;
     margin-top: 0 !important;
+  }
+
+  .form-input::placeholder {
+    color: gray !important;
+    opacity: 1;
   }
   
   .form-input:focus {
@@ -83,7 +88,7 @@
   }
   
   .search-btn:disabled {
-    background-color: rgba(255, 255, 255, 0.456) !important;
+    background-color: rgb(255, 255, 255) !important;
   }
 
   .date-picker {
@@ -93,8 +98,8 @@
   .date-picker input {
     border-radius: 13px !important;
     padding: 11px !important;
-    background-color: #31383e !important;
-    color: #979797 !important;
+    background-color: #ffffff !important;
+    color: #000000 !important;
     border: 0 !important;
     outline: 0 !important;
     width: 150px;
