@@ -1,6 +1,6 @@
 .navbar {
-    background-color: rgb(41, 47, 51) !important;
-    padding: 20px !important;
+    background-color: #141d40 !important;
+    /* padding: 20px !important; */
     font-size: 18px !important;
   }
   
@@ -42,7 +42,7 @@
     border-bottom-left-radius: 13px !important;
     padding: 11px !important;
     margin-left: 13px !important;
-    margin-right: -9px !important;
+    /* margin-right: -9px !important; */
     font-size: 18px !important;
     background-color: #31383e !important;
     color: #fff !important;
@@ -60,8 +60,8 @@
   }
   
   .search-btn {
-    background-color: #005abb !important;
-    color: white !important;
+    background-color: white !important;
+    color: black !important;
     font-weight: 700 !important;
     border-radius: 0 !important;
     border-top-right-radius: 13px !important;
@@ -74,16 +74,16 @@
 
   }
   .search-btn::placeholder {
-    color: #fff !important;
+    color: black !important;
     opacity: 1; /* Firefox */
   }
   .search-btn:hover {
-    background-color: rgb(9 71 137) !important;
+    background-color:wheat !important;
     transition: 0.5s ease !important;
   }
   
   .search-btn:disabled {
-    background-color: #005abb !important;
+    background-color: rgba(255, 255, 255, 0.456) !important;
   }
 
   .date-picker {

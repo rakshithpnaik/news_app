@@ -25,10 +25,8 @@ import "react-datepicker/dist/react-datepicker.css";
 
 function NavBar() {
   const dispatch = useDispatch();
-  // Get the current location object
   const location = useLocation();
 
-  // Extract the pathname from the location object
   const currentPath = location.pathname;
 
   const isPagePersonalized = /\/personalized/.test(currentPath);
@@ -95,7 +93,6 @@ function NavBar() {
       })
     );
     dispatch(setQuery(""));
-    // eslint-disable-next-line
   }, [dispatch, selected, selectedCategory]);
 
   return (
@@ -150,8 +147,8 @@ function NavBar() {
             </Nav.Link>
             <NavDropdown
               id="dropdown-basic-button"
-              title={capitaLize(selectedCategory)} // Display the selected source's name
-              onSelect={handleSelectCategory} // Handle the selection event
+              title={capitaLize(selectedCategory)}
+              onSelect={handleSelectCategory}
             >
               {categories.map((element, index) => (
                 <NavDropdown.Item key={index} eventKey={element}>
@@ -162,8 +159,8 @@ function NavBar() {
 
             <NavDropdown
               id="dropdown-basic-button"
-              title={selected.name} // Display the selected source's name
-              onSelect={handleSelectSource} // Handle the selection event
+              title={selected.name}
+              onSelect={handleSelectSource}
             >
               {sources.map((element, index) => (
                 <NavDropdown.Item key={index} eventKey={element.key}>
